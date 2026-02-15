@@ -1,0 +1,57 @@
+﻿<Window x:Name="window" x:Class="VarconInstaller.decideBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VarconInstaller"
+        mc:Ignorable="d"
+        Title="警告" Height="243.6" Width="306.452" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="White">
+    <Window.Resources>
+        <Storyboard x:Key="start">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="window">
+                <EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="White">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <CubicEase EasingMode="EaseOut"/>
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource start}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid x:Name="grid" Background="#19C54000" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBlock x:Name="标题" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="Title_1" VerticalAlignment="Top" FontSize="30" Foreground="#FFBA4107"/>
+        <TextBlock x:Name="内容" Margin="20,63.1,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Content" Foreground="#FFBA4107"/>
+        <Button x:Name="apply" Content="确定" HorizontalAlignment="Right" Height="26.2" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="55.052" Click="apply_Click" Foreground="#FFC54000" Background="White" BorderBrush="#FFE8E8E8"/>
+        <Button x:Name="cancel" Content="取消" HorizontalAlignment="Right" Height="26.2" Margin="0,0,70.052,10" VerticalAlignment="Bottom" Width="55.052" Click="cancel_Click" Foreground="#FFC54000" BorderBrush="#FFE4E4E4" Background="White"/>
+
+    </Grid>
+</Window>
