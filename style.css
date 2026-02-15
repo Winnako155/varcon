@@ -255,6 +255,7 @@ body {
     width: 300px; /*宽度*/
     margin-top: 100px; /*距离顶部的距离*/
     margin-left: 50px; /*距离左侧的距离*/
+    z-index: -1;
 }
 /* /定义启动logo的样式 */
 
@@ -280,6 +281,7 @@ h3 {
     opacity: 0.5; /*透明度*/
     outline: 0px solid rgba(255, 255, 255, 0.0); /*轮廓*/
     transition: all 0.3s ease; /*过渡效果*/
+    z-index: 100;
 }
 /* /定义下载按钮的样式 */
 

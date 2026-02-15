@@ -36,8 +36,8 @@ function load_3(){ //加载界面
     }
     
     // 设置5秒超时，弹出是否跳过提示
-    timeoutId = setTimeout(function(){
-        var isSkip = decideBoxShow("加载超时", "加载时间超过5秒，是否跳过加载？", "跳过", "继续等待");
+    timeoutId = setTimeout(async function(){
+        var isSkip = await decideBoxShow("加载超时", "加载时间超过5秒，是否跳过加载？", "跳过", "继续等待");
         // 监听用户选择
         if (isSkip) {
             hideLoader();
@@ -97,8 +97,16 @@ load_3();
 
 
 
-downloadButton.addEventListener("click", function(){
-    decideBoxShow("确认下载", "是否确认下载Varcon Start Menu HTML 0.14？");
+downloadButton.addEventListener("click", async function(){
+    var dlg = await decideBoxShow("确认下载", "选择 Varcon Start Menu 3.0 的下载方式","123云盘","通过GitHub");
+    if(dlg == true){
+        // 123云盘
+        window.open("https://www.123865.com/s/MO1cVv-FoSov");
+    }
+    else{
+        // 通过GitHub
+        window.open("https://github.com/Winnako155/varcon");
+    }
 });
 // 检测.lightFont元素是否进入视口
 const lightFont = document.querySelector('.lightFont');
@@ -134,43 +142,45 @@ function createBackGround(opacity){
 
 // 显示决定框
 function decideBoxShow(title, content, applyText = "确认", cancelText = "取消"){
-    var backGround = createBackGround(0.6); // 创建背景元素
-    var decideBox = document.createElement("div"); // 创建决定框元素
-    decideBox.id = "decideBox"; // 让它的style绑定
-    var decideBox_Title = document.createElement("h1"); // 创建决定框标题元素
-    var decideBox_Content = document.createElement("p"); // 创建决定框内容元素
-    var decideBox_ButtonsDiv = document.createElement("div"); // 创建决定框按钮元素
+    return new Promise(function(resolve){
+        var backGround = createBackGround(0.6); // 创建背景元素
+        var decideBox = document.createElement("div"); // 创建决定框元素
+        decideBox.id = "decideBox"; // 让它的style绑定
+        var decideBox_Title = document.createElement("h1"); // 创建决定框标题元素
+        var decideBox_Content = document.createElement("p"); // 创建决定框内容元素
+        var decideBox_ButtonsDiv = document.createElement("div"); // 创建决定框按钮元素
 
-    var decideBox_Apply = document.createElement("button"); // 创建决定框确认按钮元素
-    decideBox_Apply.id = "decideBox_Apply"; // 让它的style绑定
-    var decideBox_Cancel = document.createElement("button"); // 创建决定框取消按钮元素
-    decideBox_Cancel.id = "decideBox_Cancel"; // 让它的style绑定
-    decideBox_ButtonsDiv.appendChild(decideBox_Apply); // 将决定框确认按钮元素添加到决定框按钮元素中
-    decideBox_ButtonsDiv.appendChild(decideBox_Cancel); // 将决定框取消按钮元素添加到决定框按钮元素中
-    decideBox.appendChild(decideBox_Title); // 将决定框标题元素添加到决定框元素中
-    decideBox.appendChild(decideBox_Content); // 将决定框内容元素添加到决定框元素中
-    decideBox.appendChild(decideBox_ButtonsDiv); // 将决定框按钮元素添加到决定框元素中
-    backGround.appendChild(decideBox); // 将决定框元素添加到背景元素中
-    document.body.appendChild(backGround); // 将背景元素添加到body元素中
+        var decideBox_Apply = document.createElement("button"); // 创建决定框确认按钮元素
+        decideBox_Apply.id = "decideBox_Apply"; // 让它的style绑定
+        var decideBox_Cancel = document.createElement("button"); // 创建决定框取消按钮元素
+        decideBox_Cancel.id = "decideBox_Cancel"; // 让它的style绑定
+        decideBox_ButtonsDiv.appendChild(decideBox_Apply); // 将决定框确认按钮元素添加到决定框按钮元素中
+        decideBox_ButtonsDiv.appendChild(decideBox_Cancel); // 将决定框取消按钮元素添加到决定框按钮元素中
+        decideBox.appendChild(decideBox_Title); // 将决定框标题元素添加到决定框元素中
+        decideBox.appendChild(decideBox_Content); // 将决定框内容元素添加到决定框元素中
+        decideBox.appendChild(decideBox_ButtonsDiv); // 将决定框按钮元素添加到决定框元素中
+        backGround.appendChild(decideBox); // 将决定框元素添加到背景元素中
+        document.body.appendChild(backGround); // 将背景元素添加到body元素中
     
 
-    decideBox_Title.innerHTML = title; // 给决定框标题元素添加文字
-    decideBox_Content.innerHTML = content; // 给决定框内容元素添加文字
-    decideBox_Apply.innerHTML = applyText; // 给决定框确认按钮元素添加文字
-    decideBox_Cancel.innerHTML = cancelText; // 给决定框取消按钮元素添加文字
-    decideBox_Apply.addEventListener("click", function(){ // 点击决定框确认按钮元素时隐藏决定框
-        decideBoxHide();
-        return true;
-    });
-    decideBox_Cancel.addEventListener("click", function(){ // 点击决定框取消按钮元素时隐藏决定框
-        decideBoxHide();
-        return false;
-    });
-    backGround.addEventListener("click", function(){ // 点击背景元素时隐藏决定框
-        if (event.target === backGround) { // 检查点击的是否是背景元素本身
+        decideBox_Title.innerHTML = title; // 给决定框标题元素添加文字
+        decideBox_Content.innerHTML = content; // 给决定框内容元素添加文字
+        decideBox_Apply.innerHTML = applyText; // 给决定框确认按钮元素添加文字
+        decideBox_Cancel.innerHTML = cancelText; // 给决定框取消按钮元素添加文字
+        decideBox_Apply.addEventListener("click", function(){ // 点击决定框确认按钮元素时隐藏决定框
             decideBoxHide();
-            return false;
-        }
+            resolve(true);
+        });
+        decideBox_Cancel.addEventListener("click", function(){ // 点击决定框取消按钮元素时隐藏决定框
+            decideBoxHide();
+            resolve(false);
+        });
+        backGround.addEventListener("click", function(){ // 点击背景元素时隐藏决定框
+            if (event.target === backGround) { // 检查点击的是否是背景元素本身
+                decideBoxHide();
+                resolve(false);
+            }
+        });
     });
 }
 //显示决定框结束
