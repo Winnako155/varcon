@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="cn"> <!-- 页面语言设置为中文（cn） -->
+<head>
+    <link rel="stylesheet" href="style.css"> <!-- 引入外部CSS文件style.css，用于定义页面的样式 -->
+    <meta charset="UTF-8"> <!-- 页面字符编码设置为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 页面视口设置，宽度=device宽度，初始缩放比例=1.0 -->
+    <title>-Varcon Start Menu- 让旧设备用上win10开始菜单</title> <!-- 页面标题 -->
+    <link rel="icon" href="https://i.postimg.cc/Jngtd937/fen-zu-30.png" type="image/png"> <!-- 页面图标设置为logo.png -->
+</head>
+<body>
+    <!-- 顶部导航条 -->
+    <div id="topBar">
+        <!--左上方的logo-->
+        <div class="logo">
+            <img src="https://i.postimg.cc/fTVxD9Kj/logo.png" alt="logo" id="logo">
+        </div>
+        <!--/左上方的logo-->
+        <!-- 顶部按钮 -->
+        <div id="topButtonsBar">
+            <button class="topButton fireButton">Start Menu</button> <!-- FireButton指已经被点击的按钮，会有特殊样式 -->
+            <button class="topButton" onclick="window.location.href='help.html'">帮助</button>
+            <button class="topButton" onclick="window.location.href='https://space.bilibili.com/3461569759414524/dynamic'">最新动态</button>
+            <button class="topButton" onclick="window.location.href='https://wqgy73ndpg58y.villa.functorz.com/'">反馈</button>
+        </div>
+       <!-- /顶部按钮 -->
+    </div>
+    <!-- /顶部导航条 -->
+    
+    <!--第一屏-->
+    <div id="firstScreen">
+        <!-- 主体内容 -->
+        <div id="mainView">
+            <img src="https://www.helloimg.com/i/2025/07/14/6874d0d03d186.png" alt="logo" id="startLogo">
+            <h3>新的开始</h3>
+            <button id="downloadButton">下载</button>
+        </div>
+        <!-- /主体内容 -->
+        <!--右下角浮动元件-->
+        <img src="https://i.postimg.cc/SKdXWSdx/4.png" alt="" id="rightBottom">
+        <!--/右下角浮动元件-->
+    </div>
+    <!--/第一屏-->
+
+    <!--腰间-->
+    <div id="firstToSecond">
+        <!--新功能-->
+        <div id="newFeatures" class="buttons">
+            <img id="newFeaturesImg" class="buttonImg" src="https://www.helloimg.com/i/2025/07/15/6875cf657b749.png" alt="newFeatures">
+            <p id="newFeaturesText" class="buttonText">新功能</p>
+        </div>
+        <!--/新功能-->
+        <!--BUG修复-->
+        <div id="newFeatures" class="buttons">
+            <img id="newFeaturesImg" class="buttonImg" src="https://www.helloimg.com/i/2025/07/15/68760b664a73c.png" alt="newFeatures">
+            <p id="newFeaturesText" class="buttonText">新修复</p>
+        </div>
+        <!--/BUG修复-->
+        <!--新风格-->
+        <div id="newFeatures" class="buttons">
+            <img id="newFeaturesImg" class="buttonImg" src="https://www.helloimg.com/i/2025/07/15/68760b66308f5.png" alt="newFeatures">
+            <p id="newFeaturesText" class="buttonText">新风格</p>
+        </div>
+        <!--/新风格-->
+        <!--新风格-->
+        <div id="newFeatures" class="buttons">
+            <img id="newFeaturesImg" class="buttonImg" src="https://www.helloimg.com/i/2025/07/15/68760b66305ff.png" alt="newFeatures">
+            <p id="newFeaturesText" class="buttonText">新体验</p>
+        </div>
+        <!--/新风格-->
+    </div>
+    <!--/腰间-->
+
+    <!--第二屏-->
+    <div id="secondScreen">
+        <!--第二屏标题-->
+        <p class="lightFont">聆听用户们的真实评价</p>
+        <!--/第二屏标题-->
+
+        <!--评论框-->
+        <div id="comments">
+            <!--评论1-->
+            <div class="commentBox">
+                <p class="commentTitle">RoyFreetz</p>
+                <p class="commentTime">2025-02-02 16:36</p>
+                <p class="commentContent">厉害👍,对于我这个i3-2120+4G的古董级用户太友好了</p>
+            </div>
+            <!--/评论1-->
+
+            <!--评论2-->
+            <div class="commentBox">
+                <p class="commentTitle">F7_Plus</p>
+                <p class="commentTime">2025-02-02 13:49</p>
+                <p class="commentContent">好东西三连了,希望能支持透明模糊以及多色磁贴以及修改开始按钮的功能</p>
+            </div>
+            <!--/评论2-->
+
+            <!--评论3-->
+            <div class="commentBox">
+                <p class="commentTitle">_laoKun_</p>
+                <p class="commentTime">2025-02-02 12:15</p>
+                <p class="commentContent">又回来看了一下,搭配仿win10主题用真的无敌</p>
+            </div>
+            <!--/评论3-->
+
+            <!--评论4-->
+            <div class="commentBox">
+                <p class="commentTitle">不会魔法的小麻瓜_</p>
+                <p class="commentTime">2025-05-31 20:01</p>
+                <p class="commentContent">界面也是越来越好看了,希望up能做得更好,加油</p>
+            </div>
+            <!--/评论4-->
+        </div>
+        <!--/评论框-->
+    </div>
+    <!--/第二屏-->
+
+    
+
+</body>
+<script src="script.js"></script>
+</html>
