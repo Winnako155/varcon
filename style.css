@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 /* 定义开始动画 */
 @keyframes start { 
     /* 开始动画的初始状态 */
@@ -145,7 +149,7 @@ body::-webkit-scrollbar {
 body {
     margin: 0; /*让body的边距为0，以便于最佳的视觉效果*/
     padding: 0; /*让body的内边距为0，以便于最佳的视觉效果*/
-    height: 200vh; /*填充body的高度，使其与屏幕高度一致*/
+    height: 100%; /*填充body的高度，使其与屏幕高度一致*/
     background: linear-gradient(116.57deg, rgba(29, 6, 84, 1) 0%, rgba(14, 3, 38, 1) 43.06%, rgba(15, 0, 48, 1) 100%); /*背景的渐变色*/
 }
 /* /定义body的样式 */
@@ -191,6 +195,7 @@ body {
     width: auto; /*宽度*/
     height: 70%; /*高度*/
     opacity: 0; /*初始透明度*/
+    z-index: -1; /*层级(最高)*/
 }
 /* /定义右侧底部的样式 */
 
@@ -269,6 +274,7 @@ h3 {
 
 /* 定义下载按钮的样式 */
 #downloadButton {
+    margin-top: 10px;
     margin-left: 50px; /*距离左侧的距离*/
     cursor: pointer; /*鼠标指针*/
     width: 80px; /*宽度*/
@@ -573,4 +579,37 @@ h3 {
     transform: scale(1.05);
     background-color: #ffffff28;
     color: rgb(255, 255, 255);
+}
+
+#bottomView{
+    margin-top: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #0000003f;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    height: auto;
+    box-sizing: border-box;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    background-color: 00000032;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    text-align: center;
+    transition: all 0.2s ease;
+}
+a:hover{
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #00000032;
 }
