@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="daysMatter_style.css">
+    <link rel="shortcut icon" href="https://pic1.imgdb.cn/i/033xoTLo7U0CYKdlNIZ35b.png" type="image/x-icon">
+    <title>-Varcon倒数日- 让桌面上显示距离重要日子的天数</title>
+</head>
+<body>
+    <!-- 顶部导航条 -->
+    <div id="topBar">
+        <!--左上方的logo-->
+        <div class="logo">
+            <img src="https://i.postimg.cc/fTVxD9Kj/logo.png" alt="logo" id="logo">
+        </div>
+        <!--/左上方的logo-->
+        <!-- 顶部按钮 -->
+        <div id="topButtonsBar">
+            <button class="topButton" onclick="window.location.href='index.html'">Start Menu</button> <!-- FireButton指已经被点击的按钮，会有特殊样式 -->
+            <button class="topButton fireButton">Varcon倒数日</button> <!-- FireButton指已经被点击的按钮，会有特殊样式 -->
+            <button class="topButton" onclick="window.location.href='https://space.bilibili.com/696501979/dynamic'">最新动态</button>
+            <button class="topButton" onclick="window.location.href='https://wqgy73ndpg58y.villa.functorz.com/'">反馈</button>
+        </div>
+       <!-- /顶部按钮 -->
+    </div>
+    <!-- /顶部导航条 -->
+
+    <!--第一屏-->
+    <div id="firstScreen" style="height: 100vh; ">
+        <img src="https://pic1.imgdb.cn/i/033xoaW8g4yxsYYsrpZq4L.png" alt="" style="height: 100vh; position: absolute;">
+        <div id="firstScreenText" style="position: absolute; top: 50%; right: 0; transform: translate(0, -50%); display: flex; flex-direction: column; justify-content: start; align-items: start;">
+            <img src="https://pic1.imgdb.cn/i/033xoe91A44YrFig6Y1I6K.png" alt="" style="width: 300px; margin-right: 200px;">
+            <button id="downloadButton" style="z-index: 100;" onclick="window.location.href='https://wwazp.lanzouw.com/iFoVY3zf40oh'">下载</button>
+        </div>
+    </div>
+
+    <!--底部视图-->
+    <div id="bottomView">
+        <div>
+            <img src="https://i.postimg.cc/fTVxD9Kj/logo.png" alt="logo" id="logo">
+            <p style="margin-top: 10px;">Varcon 倒数日(Varcon DaysMatter) 是由Varcon Studio开发与维护的 (GNU) 自由开源软件，用于在桌面上显示距离重要日子的天数。</p>
+            <p>© 2020-2026 这里是Ywang. All Rights Reserved.</p>
+            <p>采用 GPL v3 开源协议发布于 Github。</p>
+        </div>
+        <div>
+            <h1 style="text-align: right; margin-bottom: 10px;">开发者</h1>
+            <a href="https://space.bilibili.com/696501979">这里是Ywang</a>
+        </div>
+    </div>
+    <!--/底部视图-->
+</body>
+<script src="daysMatter_script.js"></script>
+</html>
